@@ -374,10 +374,6 @@ IS, FID, and F_beta values are computed using 10K test and 10K generated Images.
 | **ProjGAN** | StudioGAN |  7.539 | 33.830 | 0.952 | 0.855 | [Cfg](./src/configs/CIFAR10/ProjGAN.yaml) | [Log](./logs/CIFAR10/ProjGAN-train-2020_09_17_20_05_34.log) | [Link](https://drive.google.com/drive/folders/1JtMUFYkKahlfItvHKx87WIiRl89D9Dhr?usp=sharing) |
 | **SNGAN** | StudioGAN |  8.677 | 13.248 | 0.983 | 0.978 | [Cfg](./src/configs/CIFAR10/SNGAN.yaml) | [Log](./logs/CIFAR10/SNGAN-train-2020_09_18_14_37_00.log) | [Link](https://drive.google.com/drive/folders/16s5Cr-V-NlfLyy_uyXEkoNxLBt-8wYSM?usp=sharing) |
 | **SAGAN** | StudioGAN |  8.680 | 14.009 | 0.982 | 0.970 | [Cfg](./src/configs/CIFAR10/SAGAN.yaml) | [Log](./logs/CIFAR10/SAGAN-train-2020_09_18_23_34_49.log) | [Link](https://drive.google.com/drive/folders/1FA8hcz4MB8-hgTwLuDA0ZUfr8slud5P_?usp=sharing) |
-| **BigGAN** | [Paper](https://arxiv.org/abs/1809.11096) | 9.22<sup>[4](#footnote_4)</sup> | 14.73 | - | - | - | - | - |
-| **BigGAN + CR** | [Paper](https://arxiv.org/abs/1910.12027) | - | 11.5 | - | - | - | - | - |
-| **BigGAN + ICR** | [Paper](https://arxiv.org/abs/2002.04724) | - | 9.2 | - | - | - | - | - |
-| **BigGAN + DiffAugment** | [Repo](https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-biggan-cifar) | 9.2<sup>[4](#footnote_4)</sup> | 8.7 | - | - | - | - | - |
 | **BigGAN-Mod**| StudioGAN | 9.746 | 8.034 | 0.995 | 0.994 | [Cfg](./src/configs/CIFAR10/BigGAN-Mod.yaml) | [Log](./logs/CIFAR10/BigGAN-train-2021_01_15_14_48_48.log) | [Link](https://drive.google.com/drive/folders/10sSMINp_xxVtjY0YssHgZ9w-_yk6rFVA?usp=sharing) |
 | **BigGAN-Mod + CR** | StudioGAN |  10.380 | 7.178 | 0.994 | 0.993 | [Cfg](./src/configs/CIFAR10/BigGAN-Mod-CR.yaml) | [Log](./logs/CIFAR10/CRGAN(P)-train-2020_09_17_13_45_19.log) | [Link](https://drive.google.com/drive/folders/1I9HYBU2t2CYmqsrKeeoivYiIUXHqO8k7?usp=sharing) |
 | **BigGAN-Mod + ICR** | StudioGAN | 10.153 | 7.430 | 0.994 | 0.993 | [Cfg](./src/configs/CIFAR10/BigGAN-Mod-ICR.yaml) | [Log](./logs/CIFAR10/ICRGAN(P)-train-2020_09_17_13_46_09.log) | [Link](https://drive.google.com/drive/folders/1ZsX9Xu7j7MCG0V53FSk5K8HJpnsRIvtw?usp=sharing) |
@@ -391,20 +387,8 @@ IS, FID, and F_beta values are computed using 10K test and 10K generated Images.
 | **ReACGAN + CR** | StudioGAN | 9.833 | 7.176 | 0.996 | 0.993 | [Cfg](./src/configs/CIFAR10/ReACGAN-CR.yaml) | [Log](./logs/CIFAR10/CCMGAN-train-2021_05_03_12_19_16.log) | [Link](https://drive.google.com/drive/folders/1-g7pxQ1nQnkjexiKmPk5GnO5im-6QHIe?usp=sharing) |
 | **ReACGAN + DiffAugment** | StudioGAN | 10.181 | 6.717| 0.996 | 0.994 | [Cfg](./src/configs/CIFAR10/ReACGAN-DiffAug.yaml) | [Log](./logs/CIFAR10/CCMGAN-train-2021_05_03_12_20_37.log) | [Link](https://drive.google.com/drive/folders/1nzUrYuoofkekN-LM3SIaNMS3EQT43nGO?usp=sharing) |
 
-### CIFAR10 (3x32x32) using StyleGAN2
-
-When training and evaluating, we used the command below.
-
-```bash
-CUDA_VISIBLE_DEVICES=0,1 python3 src/main.py -t -e -hdf5 -l -mpc -ref "train" -cfg CONFIG_PATH -data DATA_PATH -save SAVE_PATH
-```
-
-IS, FID, Dns, and Cvg values are computed using 50K train and 50K generated Images.
-
 | Method | Reference | IS(⭡) | FID(⭣) | Dns(⭡) | Cvg(⭡) | Cfg | Log | Weights |
 |:-----------|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:
-| **StyleGAN2**<sup>[5](#footnote_1)</sup> | [Paper](https://arxiv.org/abs/2006.06676) | 9.53<sup>[4](#footnote_4)</sup> | 6.96 | - | - | - | - | - |
-| **StyleGAN2 + ADA**<sup>[5](#footnote_5)</sup> | [Paper](https://arxiv.org/abs/2006.06676) | 10.14<sup>[4](#footnote_4)</sup> | 2.42 | - | - | - | - | - |
 | **StyleGAN2** | StudioGAN | 10.149 | 3.889 | 0.979 | 0.893 | [Cfg](./src/configs/CIFAR10/StyleGAN2.yaml) | [Log](https://github.com/POSTECH-CVLab/PyTorch-StudioGAN/blob/master/logs/CIFAR10/StyleGAN2-train-2021_10_18_00_40_38.log) | [Link](https://drive.google.com/drive/folders/1YEMvPXzYNQWCkMCv83-3J6QC2tMbdy6Y?usp=sharing) |
 | **StyleGAN2 + D2D-CE** | StudioGAN | 10.320 | 3.385 | 0.974 | 0.899 | [Cfg](./src/configs/CIFAR10/StyleGAN2-D2DCE.yaml) | [Log](https://github.com/POSTECH-CVLab/PyTorch-StudioGAN/blob/master/logs/CIFAR10/StyleGAN2-D2DCE-train-2021_10_16_13_21_26.log) | [Link](https://drive.google.com/drive/folders/1oOMN_w-Ij3Bx_vQP5z5_PCfbdf1Xd8Dz?usp=sharing) |
 | **StyleGAN2 + ADA** | StudioGAN | 10.477 | 2.316 | 1.049 | 0.929 | [Cfg](./src/configs/CIFAR10/StyleGAN2-ADA.yaml) | [Log](https://github.com/POSTECH-CVLab/PyTorch-StudioGAN/blob/master/logs/CIFAR10/StyleGAN2-ADA-train-2021_10_16_13_21_43.log) | [Link](https://drive.google.com/drive/folders/1A9eEM_iYlaMQQ0ga_ulVXVEyMmGLr8pP?usp=sharing) |
